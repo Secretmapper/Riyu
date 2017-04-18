@@ -1,0 +1,58 @@
+.project {
+  overflow: hidden;
+  margin-bottom: 30px;
+  text-align: center;
+
+  @media #{$tablet} {
+    text-align: left;
+  }
+
+  &__img-container {
+    margin: 0 auto;
+    text-align: center;
+    height: 100px;
+    width: 100px;
+    line-height: 100px;
+
+    @media #{$tablet} {
+      float: left;
+      line-height: 300px;
+      height: 300px;
+      width: 300px;
+    }
+  }
+  &__img {
+    display: inline-block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  &__name {
+    margin-bottom: 5px;
+  }
+  &__details {
+    padding: 15px;
+
+    @media #{$tablet} {
+      margin-left: 300px;
+      margin-right: 0;
+    }
+  }
+}
+
+
+.project:nth-child(even) {
+  .project__img-container {
+    @media #{$tablet} {
+      float: right;
+    }
+  }
+  .project__details {
+    @media #{$tablet} {
+      margin-left: 0;
+      margin-right: 300px;
+    }
+  }
+}

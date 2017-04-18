@@ -1,0 +1,15 @@
+.footer {
+  background-color: $footer-color;
+  color: $footer-text-color;
+  text-align: center;
+  padding: 20px 0;
+
+  &__name {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__title {
+    margin-top: 0;
+    color: $footer-alt-color;
+  }
+}

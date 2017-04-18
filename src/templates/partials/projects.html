@@ -1,0 +1,30 @@
+<div class="container project-container">
+  <h1>My Projects</h1>
+  {% for project in projects %}
+    <div class="project">
+      <div class="project__img-container">
+        {% assign alt = project.alt %}
+        {% unless project.alt %}
+          {% capture alt %}{{ project.name }} Screenshot{% endcapture %}
+        {% endif %}
+        <img class="project__img" src="img/{{ project.img }}" alt="{{alt}}">
+      </div>
+      <div class="project__details">
+        <h2 class="project__name">
+          {{ project.name }}
+        </h2>
+        <div class="skill-tags">
+          {% for tag in project.tags %}
+            <div class="skill-tag">{{ tag }}</div>
+          {% endfor %}
+        </div>
+        <p>
+          {{ project.description }}
+          <div>
+            <a class="btn" href="{{project.url}}" target="_blank">View Project</a>
+          </div>
+        </p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

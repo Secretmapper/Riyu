@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="lead">
+    <h1 class="lead__heading">{{ header }}</h1>
+    <div class="lead__sub">
+      {{ description }}
+    </div>
+
+    <div class="call-to-action">
+      <a href="{{ cta.url }}" target="_blank" class="btn btn--primary btn--lg">{{ cta.label }}</a>
+
+      <div class="socials">
+        {% for social in socials %}
+          {% assign url = social.url %}
+          {% if social.icon == 'mail-alt' %}
+            {% capture url %}mailto:{{ email }}{% endcapture %}
+          {% endif %}
+          <a
+            class="socials__link"
+            href="{{ url }}"
+            target="_blank"
+          >
+              <i class="icon-{{social.icon}}"></i>
+            </a>
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

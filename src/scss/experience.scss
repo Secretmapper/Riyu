@@ -1,0 +1,79 @@
+.experience-container {
+}
+
+.timeline {
+  position: relative;
+
+  &__line {
+    width: 1px;
+    background: $muted-color;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    left: 100%;
+    @media #{$tablet} {
+      left: 50%;
+    }
+  }
+  &__item {
+    animation: slideUp 750ms both;
+
+    border: 1px solid #eaeaea;
+    border-top: 2px solid $main-color;
+    color: #222;
+    display: inline-block;
+    font-size: 13px;
+    padding: 20px;
+    position: relative;
+    vertical-align: top;
+    width: 97%;
+    @media #{$tablet} {
+      width: 46%;
+    }
+    &:after {
+      height: 1px;
+      top: 0;
+      background-color: $muted-color;
+      content: '';
+      display: block;
+      left: inherit;
+      position: absolute;
+
+      right: -4%;
+      width: 4%; 
+
+      @media #{$tablet} {
+        right: -9%;
+        width: 9%; 
+      }
+    }
+    &:nth-child(odd) {
+      margin-top: 20px;
+      margin-bottom: -100px;
+
+      @media #{$tablet} {
+        margin-top: 160px;
+        margin-left: 7%;
+        &:after {
+          left: -8%;
+          width: 8%;
+        }
+      }
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.experience {
+  &__header {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $muted-color;
+  }
+  &__name {
+    margin: 0;
+  }
+}

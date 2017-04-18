@@ -1,0 +1,27 @@
+<div class="container experience-container">
+  <h1>Experience</h1>
+  <div class="timeline">
+    <div class="timeline__line"></div>
+    {% for experience in experiences %}
+      <div class="timeline__item">
+        <div class="experience">
+          <header class="experience__header">{{ experience.timeline }}</header>
+          <h2 class="experience__name">
+            {{ experience.title }}
+          </h2>
+          <div class="skill-tags">
+            {% for tag in experience.tags %}
+              <div class="skill-tag">{{ tag }}</div>
+            {% endfor %}
+          </div>
+          <p>{{ experience.description }}</p>
+          <ul>
+            {% for resp in experience.responsibilities %}
+              <li>{{ resp }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
