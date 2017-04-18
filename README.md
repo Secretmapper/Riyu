@@ -4,6 +4,8 @@ Riyu is a cool, modern, and minimal portfolio template that is super easy to cus
 
 Whether you just want to add your information to create a page or edit styles and sections to add your own flair, Riyu has you covered.
 
+[Live Demo](https://secretmapper.github.io/Riyu/)
+
 ## Features
 
 - Super lightweight and loads ridiculously fast (no external dependencies except a few font icons)
