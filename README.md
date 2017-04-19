@@ -32,7 +32,7 @@ The easiest way to edit Riku (without any setup at all) is to simply edit the bu
 
 1. Fork/Clone the repo
 2. Run `npm intall` or `yarn install` to install dependencies
-3. Run `npm start`/`yarn`. This will start a watch server that automatically live reloads as you make edits!
+3. Run `npm start`/`yarn start`. This will start a watch server that automatically live reloads as you make edits!
 
 You can also run `yarn build` to build your files without starting the livereload server.
 
