@@ -6,6 +6,10 @@ Whether you just want to add your information to create a page or edit styles an
 
 [Live Demo](https://secretmapper.github.io/Riyu/)
 
+Live Editor
+
+![riyu-editor](editor/screenshot.png)
+
 ## Features
 
 - Super lightweight and loads ridiculously fast (no external dependencies except a few font icons)

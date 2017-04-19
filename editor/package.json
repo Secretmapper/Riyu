@@ -41,11 +41,17 @@
     "webpack": "1.14.0",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "2.0.2"
+    "whatwg-fetch": "^2.0.3"
   },
   "dependencies": {
+    "immutable": "^3.8.1",
+    "ramda": "^0.23.0",
+    "raw-loader": "^0.5.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "srcdoc-polyfill": "^1.0.0",
+    "styled-components": "^1.4.5",
+    "tinyliquid": "^0.2.34"
   },
   "scripts": {
     "start": "node scripts/start.js",
