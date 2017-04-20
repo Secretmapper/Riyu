@@ -10,6 +10,7 @@ import Button from './Button';
 import Onboarding from './Onboarding';
 import UUID from 'node-uuid';
 import debounce from 'debounce';
+import { preloadZip, generateZip } from './zip';
 
 const render = liquid.compile(tpl);
 
@@ -27,6 +28,7 @@ class App extends React.PureComponent {
   }
 
   componentDidMount () {
+    preloadZip()
     this._updateRiyuTemplate()
 
     this.updateRiyuTemplate = debounce(this._updateRiyuTemplate, 200)
@@ -121,6 +123,10 @@ class App extends React.PureComponent {
     this.setState({ onboarding: true })
   }
 
+  onCompile = _ => {
+    generateZip(this.state.html, toLiquid(this.state.data))
+  }
+
   generateInput = (data, metadata, path, inner = false) => {
     if (isString(data)) {
       return (
@@ -209,7 +215,7 @@ class App extends React.PureComponent {
           <Editor maximized={this.state.isEditorMaximized}>
             <h1>Riyu Editor</h1>
             {this.state.data ? this.generateInput(this.state.data, meta, []) : <div></div>}
-            <Button>Compile & Download</Button>
+            <Button onClick={this.onCompile}>Compile & Download</Button>
             <EditorFooter maximized={this.state.isEditorMaximized} />
           </Editor>
           <Iframe
