@@ -1,7 +1,10 @@
 var archiver = require('archiver');
-var fs = require('fs');
+var fs = require('fs-extra');
 var path = require('path');
+
 var paths = {
+  // TODO: This should really not be hardcoded
+  build: path.join(__dirname, '..', '/build'),
   bundle: path.join(__dirname, '..', '/public/riyu.zip'),
   riyu: path.join(__dirname, '..', '..'),
 }
@@ -42,7 +45,6 @@ function addFilesToArchiver(archive) {
     var dir = directories[i];
     archive.directory(path.join(paths.riyu, dir), dir);
   }
-  archive.glob('../../*(index.html|README.md|package.json)');
 
   // TODO: there's gotta be a better way to do this
   for (var i = 0; i < files.length; i++) {

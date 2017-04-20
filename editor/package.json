@@ -49,6 +49,7 @@
     "file-saver": "^1.3.3",
     "immutable": "^3.8.1",
     "jszip": "^3.1.3",
+    "node-fs-extra": "^0.8.2",
     "node-uuid": "^1.4.8",
     "ramda": "^0.23.0",
     "raw-loader": "^0.5.1",
@@ -62,10 +63,12 @@
     "tinyliquid": "^0.2.34"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "npm run genzipbundle && node scripts/start.js",
+    "build": "npm run genzipbundle && node scripts/build.js",
+    "genzipbundle": "node scripts/genZipBundle.js",
     "test": "node scripts/test.js --env=jsdom"
   },
+  "homepage": "editor/build",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"

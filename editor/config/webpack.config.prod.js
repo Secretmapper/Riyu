@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var autoprefixer = require('autoprefixer');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -68,6 +69,7 @@ module.exports = {
     publicPath: publicPath
   },
   resolve: {
+    root: [path.resolve('.'), path.resolve('../src')],
     // This allows you to set a fallback for where Webpack should look for modules.
     // We read `NODE_PATH` environment variable in `paths.js` and pass paths here.
     // We use `fallback` instead of `root` because we want `node_modules` to "win"
@@ -118,6 +120,11 @@ module.exports = {
           limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
         }
+      },
+      {
+        test: /\.(html)$/,
+        include: path.resolve('../src'),
+        loader: 'raw'
       },
       // Process JS with Babel.
       {
@@ -188,6 +195,7 @@ module.exports = {
     new InterpolateHtmlPlugin(env.raw),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
+      filename: '../../editor.html',
       inject: true,
       template: paths.appHtml,
       minify: {

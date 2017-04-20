@@ -11,6 +11,7 @@ import Onboarding from './Onboarding';
 import UUID from 'node-uuid';
 import debounce from 'debounce';
 import { preloadZip, generateZip } from './zip';
+import paths from './util/paths';
 
 const render = liquid.compile(tpl);
 
@@ -41,7 +42,7 @@ class App extends React.PureComponent {
   _updateRiyuTemplate = () => {
     const context = liquid.newContext({ locals: toLiquid(this.state.data) })
     context.onInclude((name, callback) => {
-      const key = `src/templates/${name}`
+      const key = `${paths.templates}/${name}`
 
       const load = () => {
         const ast = liquid.parse(partials[key])

@@ -1,12 +1,13 @@
 import JSZip from 'jszip'
 import FileSaver from 'file-saver'
+import { bundle } from '../util/paths'
 
 // TODO: proper zip singleton/management
 let zip
 
 export async function preloadZip () {
   try {
-    const response = await fetch('riyu.zip')
+    const response = await fetch(bundle)
     zip = await JSZip.loadAsync(response.arrayBuffer())
   } catch (e) {
     // TODO: Better error messages
