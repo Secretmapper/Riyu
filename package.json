@@ -5,7 +5,7 @@
   "main": "js/scripts.js",
   "scripts": {
     "start": "npm run watch",
-    "watch": "gulp watch",
+    "watch": "gulp serve",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
